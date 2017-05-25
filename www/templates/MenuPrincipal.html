@@ -1,0 +1,158 @@
+<ion-view view-title="Login" hide-nav-bar="true">
+    <ion-header-bar align-title="center" class="bar bar-header background-color-primary">
+        <h1 class="title color-white font-primary">{{tipoGestion}}</h1>
+    </ion-header-bar>
+
+    <ion-content>
+        <div ng-show="mostrarInformacion">
+            INFORMACION
+        </div>
+        <div ng-show="mostrarLabores">
+            LABORES
+        </div>
+        <div ng-show="mostrarRuta">
+            RUTA
+        </div>
+        <div ng-show="mostrarRecursos">
+            RECURSOS
+
+        </div>
+        <div ng-show="mostrarIncidencias">
+            <!--VISTA DE INCIDENCIAS-->
+            <!--<ng-include src="templateIncidencias"></ng-include>-->
+            <div class="container tab-container">
+                <div class="padding5">
+                    <label class="item item-input item-select">
+                        <div class="input-label font-size-small">
+                            <span class="texto-negrita">Tipo Incidencia:</span>
+                        </div><br>
+                        <select ng-model="data.tipoIncidencia" class="border-color-primary font-select">
+                            <option class="font-select-option" value="" selected>Incidencias...</option>
+                            <option class="font-select-option" value="1">Incidencia1</option>
+                            <option class="font-select-option" value="2">Incidencia2</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="padding5">
+                    <label class="item item-input item-select">
+                        <div class="input-label font-size-small">
+                            <span class="texto-negrita">Tipo Elemento:</span>
+                        </div><br>
+                        <select ng-model="data.tipoElemento" class="border-color-primary font-select" ng-change="elegirTipoElemento()">
+                            <option class="font-select-option" value="" selected>Elementos...</option>
+                            <!--<option class="font-select-option" value="1">Limpieza vertical</option>
+                            <option class="font-select-option" value="2">Papelera</option>
+                            <option class="font-select-option" value="3">Contenedor canino</option>
+                            <option class="font-select-option" value="4">Rejilla</option>-->
+                            <option class="font-select-option" ng-repeat="tipo in tiposDeElementos" value="{{tipo.id}}">{{tipo.nombre}}</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="padding5">
+                    <label class="item item-input item-stacked-label ">
+                        <span class="input-label font-size-small texto-negrita">Describir Incidencia:</span>
+                        <textarea ng-model="data.descripcion " placeholder="Escriba aquí el motivo." 
+                            class="border-color-primary font-size-small"></textarea>
+                    </label>
+                </div>
+
+                <div class="accordion-container">
+                    <button ion-item class="button button-container button-primary icon-right font-size-small accordion-header" ng-click="expandirUbicacion()" ng-class="{active: isUbicacionShown(), 'ion-android-arrow-dropup': isUbicacionShown(), 'ion-android-arrow-dropdown': !isUbicacionShown()}"
+                        ng-disabled="!data.descripcion || !data.tipoIncidencia || !data.tipoElemento">
+                            <i class="icon ion-location icon-button-primary-center"></i>
+                            <span>Ubicación</span>
+                    </button>
+                    <!--ng-show="isUbicacionShown()"-->
+                    <ion-item class="item-accordion accordion-body" ng-show="isUbicacionShown()">
+                        <div class="padding5">
+                            <label class="item item-input item-select" ng-show="isLimpiezaVertical()">
+                                <div class="input-label font-size-small text-padding5">
+                                    <span class="texto-negrita">Distrito:</span>
+                                </div>
+                                <select ng-model="data.ubicacion.distrito" class="border-color-primary font-select">
+                                    <option class="font-select-option" value="">Distritos...</option>
+                                    <option class="font-select-option" value="1">1</option>
+                                    <option class="font-select-option" value="2">2</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="padding5">
+                            <label class="item item-input item-select">
+                                <div class="input-label font-size-small text-padding5">
+                                    <span class="texto-negrita">Barrio:</span>
+                                </div>
+                                <select ng-model="data.ubicacion.barrio" class="border-color-primary font-select">
+                                    <option class="font-select-option" value="">Barrios...</option>
+                                    <option class="font-select-option" value="1">Barrio1</option>
+                                    <option class="font-select-option" value="2">Barrio2</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="padding5">
+                            <label class="item item-input item-select">
+                                <div class="input-label font-size-small text-padding5">
+                                    <span class="texto-negrita">Calle:</span>
+                                </div>
+                                <select ng-model="data.ubicacion.calle" class="border-color-primary font-select">
+                                    <option class="font-select-option" value="">Calles...</option>
+                                    <option class="font-select-option" value="1">Calle1</option>
+                                    <option class="font-select-option" value="2">Calle2</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="padding5">
+                            <label class="item item-input item-select">
+                                <div class="input-label font-size-small text-padding5">
+                                    <span class="texto-negrita">Número:</span>
+                                    {{data.ubicacion.numero}}
+                                </div>
+                                <div class="item range border-range text-padding5">
+                                    {{data.ubicacion.numeroMinimo}}
+                                    <input class="rango" type="range" name="" ng-model="data.ubicacion.numero" min="{{data.ubicacion.numeroMinimo}}" max="{{data.ubicacion.numeroMaximo}}" value="1">
+                                    {{data.ubicacion.numeroMaximo}}
+                                </div>
+                            </label>
+
+                        </div>
+                    </ion-item>
+                </div>
+
+                <br>
+                <div class="button-camera">
+
+                    <div class="padding">
+                        <button class="button button-primary-small font-size-small" ng-click="nuevaFoto()" ng-disabled="!data.descripcion || !data.tipoIncidencia || !data.tipoElemento">
+                            <i class="icon ion-camera icon-button-primary-center"></i>
+                            <span>Nueva Foto</span>
+                        </button>
+                    </div>
+                    <div class="padding">
+                        <button class="button button-primary-small font-size-small" ng-click="elegirFoto()" ng-disabled="!data.descripcion || !data.tipoIncidencia || !data.tipoElemento">
+                            <i class="icon ion-android-attach icon-button-primary-center"></i>
+                            <span>Elegir foto</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+
+    <div class="tabs tabs-icon-top" id="MenuInferior">
+        <a class="tab-item {{informacionTab}} button-tab disabled" ng-click="mostrarPestania('informacion')">
+            <i class="dimaticon info icon"></i> Información
+        </a>
+        <a class="tab-item {{laborTab}} button-tab disabled" ng-click="mostrarPestania('labores')">
+            <i class="dimaticon list icon"></i> Labores
+        </a>
+        <a class="tab-item {{rutaTab}} button-tab disabled" ng-click="mostrarPestania('ruta')">
+            <i class="dimaticon gps icon"></i> Ruta
+        </a>
+        <a class="tab-item {{recursoTab}} button-tab disabled" ng-click="mostrarPestania('recursos')">
+            <i class="dimaticon tools icon"></i> Recursos
+        </a>
+        <a class="tab-item {{incidenciaTab}} button-tab" ng-click="mostrarPestania('incidencias')">
+            <i class="dimaticon warning icon"></i> Incidencias
+        </a>
+    </div>
+
+</ion-view>

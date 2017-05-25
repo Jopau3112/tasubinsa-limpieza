@@ -1,0 +1,642 @@
+@font-face {
+	font-family: dimaticons;
+	font-style: normal;
+  	font-weight: 100;
+	src: url(Dimaticons.ttf) format('truetype');
+}
+.dimaticon {
+	font-family: dimaticons !important;
+	font-style:normal !important;
+	display: inline-block !important;
+}
+.dimaticon {
+	font-family: dimaticons !important;
+}
+.dimaticon.settings::before {
+	content: "!";
+}
+.dimaticon.search::before {
+	content: "\"";
+}
+.dimaticon.edit::before {
+	content: "#";
+}
+.dimaticon.email-read::before {
+	content: "$";
+}
+.dimaticon.email-new::before {
+	content: "%";
+}
+.dimaticon.cloud::before {
+	content: "&";
+}
+.dimaticon.cloud-up::before {
+	content: "'";
+}
+.dimaticon.cloud-down::before {
+	content: "(";
+}
+.dimaticon.user::before {
+	content: ")";
+}
+.dimaticon.user-group::before {
+	content: "*";
+}
+.dimaticon.home::before {
+	content: "+";
+}
+.dimaticon.triangle-right::before {
+	content: ",";
+}
+.dimaticon.triangle-top::before {
+	content: ",";
+}
+.dimaticon.triangle-top {
+	transform: rotate(270deg);
+}
+.dimaticon.triangle-left::before {
+	content: ",";
+}
+.dimaticon.triangle-left {
+	transform: rotate(180deg);
+}
+.dimaticon.triangle-bottom::before {
+	content: ",";
+}
+.dimaticon.triangle-bottom {
+	transform: rotate(90deg);
+}
+.dimaticon.forward::before {
+	content: "-";
+}
+.dimaticon.top::before {
+	content: "-";
+}
+.dimaticon.top {
+	transform: rotate(270deg);
+}
+.dimaticon.backward::before {
+	content: "-";
+}
+.dimaticon.backward {
+	transform: rotate(180deg);
+}
+.dimaticon.bottom::before {
+	content: "-";
+}
+.dimaticon.bottom {
+	transform: rotate(90deg);
+}
+.dimaticon.step-forward::before {
+	content: ".";
+}
+.dimaticon.step-top::before {
+	content: ".";
+}
+.dimaticon.step-top {
+	transform: rotate(270deg);
+}
+.dimaticon.step-backward::before {
+	content: ".";
+}
+.dimaticon.step-backward {
+	transform: rotate(180deg);
+}
+.dimaticon.step-bottom::before {
+	content: ".";
+}
+.dimaticon-step-bottom {
+	transform: rotate(90deg);
+}
+.dimaticon.next-forward::before {
+	content: "/";
+}
+.dimaticon.next-top::before {
+	content: "/";
+}
+.dimaticon.next-top {
+	transform: rotate(270deg);
+}
+.dimaticon.next-backward::before {
+	content: "/";
+}
+.dimaticon.next-backward {
+	transform: rotate(180deg);
+}
+.dimaticon.next-bottom::before {
+	content: "/";
+}
+.dimaticon.next-bottom {
+	transform: rotate(90deg);
+}
+.dimaticon.last-forward::before {
+	content: "0";
+}
+.dimaticon.last-top::before {
+	content: "0";
+}
+.dimaticon.last-top {
+	transform: rotate(270deg);
+}
+.dimaticon.last-backward::before {
+	content: "0";
+}
+.dimaticon.last-backward {
+	transform: rotate(180deg);
+}
+.dimaticon.last-bottom::before {
+	content: "0";
+}
+.dimaticon.last-bottom {
+	transform: rotate(90deg);
+}
+.dimaticon.stop::before {
+	content: "1";
+}
+.dimaticon.rec::before {
+	content: "2";
+}
+.dimaticon.pause::before {
+	content: "3";
+}
+.dimaticon.power::before {
+	content: "4";
+}
+.dimaticon.shuffle::before {
+	content: "5";
+}
+.dimaticon.reverse::before {
+	content: "6";
+}
+.dimaticon.reverse-bold::before {
+	content: "7";
+}
+.dimaticon.check::before {
+	content: "8";
+}
+.dimaticon.remove::before {
+	content: "9";
+}
+.dimaticon.align-left::before {
+	content: ":";
+}
+
+.dimaticon.align-right::before {
+	content: ":";
+}
+.dimaticon.align-right {
+	transform: scaleX(-1);
+}
+.dimaticon.align-justify::before {
+	content: ";";
+}
+.dimaticon.align-center::before {
+	content: "<";
+}
+.dimaticon.align-list::before {
+	content: "=";
+}
+.dimaticon.export-word::before {
+	content: ">";
+}
+.dimaticon.export-excel::before {
+	content: "?";
+}
+.dimaticon.export-html::before {
+	content: "@";
+}
+.dimaticon.export-pdf::before {
+	content: "A";
+}
+.dimaticon.marker::before {
+	content: "B";
+}
+.dimaticon.sound-none::before {
+	content: "C";
+}
+.dimaticon.sound-low::before {
+	content: "D";
+}
+.dimaticon.sound-medium::before {
+	content: "E";
+}
+.dimaticon.sound-high::before {
+	content: "F";
+}
+.dimaticon.sound-off::before {
+	content: "G";
+}
+.dimaticon.repeat::before {
+	content: "H";
+}
+.dimaticon.refresh::before {
+	content: "I";
+}
+.dimaticon.recycle::before {
+	content: "J";
+}
+.dimaticon.bell::before {
+	content: "K";
+}
+.dimaticon.clip::before {
+	content: "L";
+}
+.dimaticon.wifi-high::before {
+	content: "M";
+}
+.dimaticon.wifi-medium::before {
+	content: "N";
+}
+.dimaticon.wifi-low::before {
+	content: "O";
+}
+.dimaticon.gps::before {
+	content: "P";
+}
+.dimaticon.database::before {
+	content: "Q";
+}
+.dimaticon.databases::before {
+	content: "R";
+}
+.dimaticon.file::before {
+	content: "S";
+}
+.dimaticon.folder-closed::before {
+	content: "T";
+}
+.dimaticon.folder-opened::before {
+	content: "U";
+}
+.dimaticon.trash::before {
+	content: "V";
+}
+.dimaticon.file-upload::before {
+	content: "W";
+}
+.dimaticon.file-download::before {
+	content: "X";
+}
+.dimaticon.success::before {
+	content: "Y";
+}
+.dimaticon.not-success::before {
+	content: "Z";
+}
+.dimaticon.warning::before {
+	content: "[";
+}
+
+.dimaticon.info::before {
+	content: "^";
+}
+.dimaticon.question::before {
+	content: "]";
+}
+.dimaticon.banned::before {
+	content: "_";	
+}
+
+.dimaticon.success-full::before {
+	content: "`";
+}
+.dimaticon.not-success-full::before {
+	content: "a";
+}
+.dimaticon.warning-full::before {
+	content: "c";
+}
+
+.dimaticon.info-full::before {
+	content: "b";
+}
+.dimaticon.question-full::before {
+	content: "d";
+}
+.dimaticon.ear::before {
+	content: "e";
+}
+.dimaticon.eye::before {
+	content: "f";
+}
+.dimaticon.chevron-down::before {
+	content: "g";
+}
+.dimaticon.chevron-left::before {
+	content: "g";
+}
+.dimaticon.chevron-left {
+	padding-bottom: 0.4em;
+	transform: rotate(90deg);
+}
+.dimaticon.chevron-up::before {
+	content: "g";
+}
+.dimaticon.chevron-up {
+	padding-bottom: 0.4em;
+	transform: rotate(180deg);
+}
+.dimaticon.chevron-right::before {
+	content: "g";
+}
+.dimaticon.chevron-right {
+	padding-bottom: 0.4em;
+	transform: rotate(270deg);
+}
+.dimaticon.cross::before {
+	content: "h";
+}
+.dimaticon.plus::before {
+	content: "i";
+}
+
+
+
+
+
+.dimaticon.screen::before {
+	content: "j";
+}
+.dimaticon.building::before {
+	content: "k";
+}
+.dimaticon.boat::before {
+	content: "l";
+}
+.dimaticon.pie-chart::before {
+	content: "m";
+}
+.dimaticon.calculator::before {
+	content: "n";
+}
+.dimaticon.save::before {
+	content: "o";
+}
+.dimaticon.list::before {
+	content: "p";
+}
+.dimaticon.at::before {
+	content: "q";
+}
+.dimaticon.chain::before {
+	content: "r";
+}
+.dimaticon.surveillance::before {
+	content: "s";
+}
+.dimaticon.insuralia::before {
+	content: "t";
+}
+.dimaticon.award::before {
+	content: "u";
+}
+.dimaticon.exit::before {
+	content: "v";
+}
+.dimaticon.twitter::before {
+	content: "w";
+}
+.dimaticon.drone::before {
+	content: "x";
+}
+.dimaticon.dimaquest::before {
+	content: "y";
+}
+.dimaticon.dimaquest-full::before {
+	content: "z";
+}
+.dimaticon.mobile::before {
+	content: "{";
+}
+.dimaticon.latin::before {
+	content: "|";
+}
+
+.dimaticon.standby::before {
+	content: "}";
+}
+.dimaticon.category::before {
+	content: "~";
+}
+.dimaticon.pill::before {
+	content: "¡";
+}
+.dimaticon.bacteria::before {
+	content: "¢";
+}
+
+.dimaticon.book::before {
+	content: "£";
+}
+.dimaticon.book-check::before {
+	content: "¤";
+}
+.dimaticon.space-invader-closed::before {
+	content: "¥";
+}
+.dimaticon.space-invader-open::before {
+	content: "¦";
+}
+.dimaticon.root::before {
+	content: "§";
+}
+.dimaticon.thumb-ok::before {
+	content: "¯";
+}
+.dimaticon.thumb-bad::before {
+	content: "©";
+}
+.dimaticon.tools::before {
+	content: "ª";
+}
+.dimaticon.brush::before {
+	content: "«";
+}
+.dimaticon.comment::before {
+	content: "¬";
+}
+.dimaticon.think::before {
+	content: "®";
+}
+.dimaticon.box-open::before {
+	content: "°";
+}
+.dimaticon.box-closed::before {
+	content: "±";
+}
+.dimaticon.degree::before {
+	content: "²";
+}
+.dimaticon.camera::before {
+	content: "³";
+}
+.dimaticon.car-long::before {
+	content: "´";
+}
+.dimaticon.car-short::before {
+	content: "µ";
+}
+
+
+
+.dimaticon.wallet::before {
+	content: "¶";
+}
+.dimaticon.coins::before {
+	content: "·";
+}
+.dimaticon.bills::before {
+	content: "¸";
+}
+.dimaticon.moon-full::before {
+	content: "¹";
+}
+.dimaticon.moon-full-less::before {
+	content: "º";
+}
+.dimaticon.moon-full-half-less::before {
+	content: "»";
+}
+.dimaticon.moon-empty-half-less::before {
+	content: "¼";
+}
+.dimaticon.moon-empty-less::before {
+	content: "½";
+}
+.dimaticon.moon-empty::before {
+	content: "¾";
+}
+.dimaticon.moon-empty-plus::before {
+	content: "¿";
+}
+.dimaticon.moon-empty-half-plus::before {
+	content: "À";
+}
+.dimaticon.moon-full-half-plus::before {
+	content: "Á";
+}
+.dimaticon.moon-full-plus::before {
+	content: "Â";
+}
+.dimaticon.lifesafe::before {
+	content: "Ã";
+}
+.dimaticon.flag::before {
+	content: "Ä";
+}
+.dimaticon.relation::before {
+	content: "Å";
+}
+.dimaticon.send::before {
+	content: "Æ";
+}
+.dimaticon.speed::before {
+	content: "Ç";
+}
+.dimaticon.line-graphic::before {
+	content: "È";
+}
+.dimaticon.star-six::before {
+	content: "É";
+}
+.dimaticon.atom::before {
+	content: "Ê";
+}
+
+.dimaticon.shopping-cart::before {
+	content: "Ë";
+}
+
+.dimaticon.clock::before {
+	content: "Ì";
+}
+
+.dimaticon.clock-sand::before {
+	content: "Í";
+}
+
+.dimaticon.laptop-plus::before {
+	content: "Î";
+}
+
+.dimaticon.star-five::before {
+	content: "Ï";
+}
+
+.dimaticon.cloud-strike::before {
+	content: "Ð";
+}
+
+.dimaticon.key::before {
+	content: "Ñ";
+}
+
+.dimaticon.lock-closed::before {
+	content: "Ò";
+}
+
+.dimaticon.laptop-less::before {
+	content: "Ó";
+}
+
+.dimaticon.sun::before {
+	content: "Ô";
+}
+.dimaticon.cloud-sun::before {
+	content: "Õ";
+}
+.dimaticon.museum::before {
+	content: "Ö";
+}
+
+.dimaticon.lock-open::before {
+	content: "×";
+}
+
+.dimaticon.industry::before {
+	content: "Ø";
+}
+
+.dimaticon.calendar::before {
+	content: "Ù";
+}
+
+.dimaticon.man-glasses::before {
+	content: "Ú";
+}
+.dimaticon.offices::before {
+	content: "Û";
+}
+.dimaticon.antenna::before {
+	content: "Ü";
+}
+.dimaticon.user-star::before {
+	content: "Ý";
+}
+.dimaticon.man-moustache::before {
+	content: "Þ";
+}
+.dimaticon.award-star::before {
+	content: "ß";
+}
+.dimaticon.sermicro-old::before {
+	content: "à";
+}
+.dimaticon.barcode::before {
+	content: "á";
+}
+.dimaticon.puzzle-open::before {
+	content: "â";
+}
+.dimaticon.puzzle-closed::before {
+	content: "ã";
+}
+.dimaticon.america-south::before {
+	content: "ä";
+}
+.dimaticon.pen::before {
+	content: "å";
+}
+
+
+

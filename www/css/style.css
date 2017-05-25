@@ -1,0 +1,334 @@
+/* Empty. Add your own CSS if you like */
+
+:root {
+    --color-primary: #A7064C;
+    --color-primary-disabled: #E2ACC4;
+}
+
+@font-face {
+    font-family: 'OpenSans';
+    src: url('/font/OpenSans-Semibold.ttf') format('truetype');
+}
+
+
+/*.font-primary {
+    font-family: OpenSans;
+    font-size: 17px !important;
+}*/
+
+
+/*.font-size-large {
+    font-family: OpenSans;
+    font-size: 25px !important;
+}
+
+.font-size-medium {
+    font-family: OpenSans;
+    font-size: 15px !important;
+}
+
+.font-size-small {
+    font-family: OpenSans;
+    font-size: 14px !important;
+}*/
+
+.background-color-primary {
+    background-color: #A7064C;
+    color: #fff !important;
+}
+
+.main-container {
+    padding: 40px;
+}
+
+.container {
+    padding: 25px;
+}
+
+.icon-container {
+    min-width: 42px;
+}
+
+.label-password {
+    padding: 10px 0px;
+    padding-left: 15px;
+    padding-right: 20px;
+}
+
+.icon {
+    font-size: 30px;
+}
+
+.padding60 {
+    padding: 60px;
+    padding-bottom: 15px;
+}
+
+.width50 {
+    font-size: 70px;
+}
+
+.img-logo {
+    height: 85px;
+}
+
+.color-grey {
+    color: #444444;
+}
+
+.color-black {
+    color: #000;
+}
+
+.color-white {
+    color: #fff;
+}
+
+.color-primary {
+    color: var(--color-primary);
+}
+
+.button-primary {
+    background-color: var(--color-primary) !important;
+    color: #fff !important;
+}
+
+.button-tab {
+    background-color: #212121 !important;
+    color: #fff !important;
+    /*padding-top: 5px;*/
+}
+
+.button-primary-block {
+    background-color: var(--color-primary);
+    color: #fff;
+    width: 100% !important;
+    min-height: 45px !important;
+}
+
+.button-primary-small {
+    background-color: var(--color-primary);
+    color: #fff;
+    width: 75% !important;
+    margin-top: -10px !important;
+}
+
+.button-primary.activated,
+.button-primary-block.activated,
+.button-primary-small.activated {
+    background-color: #fff;
+    color: var(--color-primary);
+    border: 0.5px solid var(--color-primary);
+}
+
+.button-tab.activated {
+    background-color: #fff;
+}
+
+.button-camera {
+    text-align: center;
+}
+
+.tab-item.button-tab.active {
+    background-color: #fff !important;
+    color: #616161 !important;
+}
+
+#MenuInferior .tab-item .icon {
+    display: block !important;
+    font-size: 20px;
+    height: 20px;
+    margin: 10px auto 0;
+}
+
+#MenuInferior {
+    background-color: #000 !important;
+    border: medium none !important;
+    bottom: 0 !important;
+    color: white;
+    position: absolute;
+}
+
+.tab-item {
+    color: #ffffff !important;
+    max-width: 50% !important;
+    opacity: 1;
+}
+
+.item.item-input.item-select {
+    border: medium none !important;
+    padding: 5px 0;
+}
+
+.item-select .input-label {
+    padding: 0 !important;
+}
+
+.item-select select {
+    border-style: none none solid !important;
+    border-width: 3px !important;
+    direction: ltr !important;
+    font-size: 16px;
+    margin-top: 2px;
+    width: 57%;
+    padding-left: 0px !important;
+}
+
+.item.item-input.item-stacked-label {
+    border: medium none;
+    padding: 10px 0;
+}
+
+.item.item-input.item-stacked-label textarea {
+    border-radius: 0 !important;
+    border-style: solid;
+    border-width: 1px 1px 3px !important;
+    height: 105px;
+    padding: 10px;
+    /*border-color: #444444 !important;*/
+}
+
+.button-primary-outline {
+    border-color: var(--color-primary);
+    background: transparent;
+    color: var(--color-primary);
+}
+
+.button-primary-disabled {
+    background-color: var(--color-primary-disabled);
+    color: #fff;
+}
+
+.button-icon-white {
+    border-color: transparent;
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+.button-container {
+    border-radius: 0px !important;
+    width: 100%;
+}
+
+.border-primary {
+    border: 0.5px solid var(--color-primary);
+}
+
+.border-color-primary {
+    border-color: var(--color-primary) !important;
+}
+
+.border-rounded {
+    border-radius: 4px;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.parrafo {
+    font-size: 16px;
+}
+
+.bar-footer {
+    margin-bottom: 20px !important;
+}
+
+.text-footer {
+    color: var(--color-primary);
+    font-size: 16px !important;
+    text-align: center !important;
+    bottom: 0px;
+    margin: 25px auto;
+    width: 100%
+}
+
+.error-form {
+    color: var(--color-primary);
+    font-size: 12px !important;
+}
+
+.texto-negrita {
+    font-weight: bold;
+}
+
+.icon-left {
+    /*padding-left: 10px;*/
+}
+
+.item.item-avatar.item-stable {
+    min-height: auto !important;
+    background-color: #eaeaea;
+}
+
+.accordion-container {
+    margin: 0px 9px;
+    padding: 0px !important;
+}
+
+.accordion-header {
+    background-color: var(--color-primary) !important;
+    color: #fff !important;
+    border: 0.5px solid var(--color-primary) !important;
+    text-align: center;
+    min-height: 5px !important;
+    width: 100% !important;
+}
+
+.accordion-body {
+    background-color: #fff !important;
+    color: #000 !important;
+    text-align: center;
+    border: 1px solid var(--color-primary);
+    border-top: 0px;
+    border-bottom-width: 3px;
+    width: 100% !important;
+    margin-left: 0.3px;
+    margin-top: 0px;
+    padding: 3px 2px !important;
+    padding-bottom: 13px !important;
+    padding-right: 20px !important;
+}
+
+
+/*.font-select {
+    color: #616161 !important;
+    padding-left: 2px !important;
+    font-size: 14px !important;
+    border-bottom-color: #fff !important;
+    border-color: #fff !important;
+}
+
+.font-select-option {
+    font-size: 14px !important;
+    color: #616161 !important;
+}*/
+
+.icon-button-primary-center {
+    margin-right: 10px;
+}
+
+.tab-container {
+    padding-bottom: 80px !important;
+}
+
+.padding5 {
+    padding: 5px 10px;
+}
+
+.text-padding5 {
+    text-align: left;
+    margin-left: 25px !important;
+}
+
+.border-range {
+    border: 0px !important;
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.rango {
+    color: green !important;
+    background-color: green !important;
+    border-color: green !important;
+}
