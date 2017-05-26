@@ -13,7 +13,7 @@ angular.module('starter.MenuPrincipalController', ['ionic'])
             calle: "",
             barrio: "",
             distrito: "",
-            numero: 1,
+            numero: 15,
             numeroMinimo: 1,
             numeroMaximo: 20,
             show: false

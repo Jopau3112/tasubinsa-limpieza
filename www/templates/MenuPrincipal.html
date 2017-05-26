@@ -57,13 +57,14 @@
                 </div>
 
                 <div class="accordion-container">
-                    <button ion-item class="button button-container button-primary icon-right font-size-small accordion-header" ng-click="expandirUbicacion()" ng-class="{active: isUbicacionShown(), 'ion-android-arrow-dropup': isUbicacionShown(), 'ion-android-arrow-dropdown': !isUbicacionShown()}"
-                        ng-disabled="!data.descripcion || !data.tipoIncidencia || !data.tipoElemento">
+                    <button ion-item class="button button-container button-primary icon-right font-size-small accordion-header" ng-click="expandirUbicacion()" ng-class="{active: isUbicacionShown(), 
+                                'ion-android-arrow-dropup': isUbicacionShown(), 
+                                'ion-android-arrow-dropdown': !isUbicacionShown()}">
                             <i class="icon ion-location icon-button-primary-center"></i>
                             <span>Ubicación</span>
                     </button>
                     <!--ng-show="isUbicacionShown()"-->
-                    <ion-item class="item-accordion accordion-body" ng-show="isUbicacionShown()">
+                    <ion-item class="item-accordion accordion-body">
                         <div class="padding5">
                             <label class="item item-input item-select" ng-show="isLimpiezaVertical()">
                                 <div class="input-label font-size-small text-padding5">
@@ -101,21 +102,22 @@
                             </label>
                         </div>
                         <div class="padding5">
-                            <label class="item item-input item-select">
+                            <label class="">
                                 <div class="input-label font-size-small text-padding5">
                                     <span class="texto-negrita">Número:</span>
-                                    {{data.ubicacion.numero}}
+                                    <!--{{data.ubicacion.numero}}-->
                                 </div>
-                                <div class="item range border-range text-padding5">
-                                    {{data.ubicacion.numeroMinimo}}
-                                    <input class="rango" type="range" name="" ng-model="data.ubicacion.numero" min="{{data.ubicacion.numeroMinimo}}" max="{{data.ubicacion.numeroMaximo}}" value="1">
-                                    {{data.ubicacion.numeroMaximo}}
-                                </div>
+                                <label>{{data.ubicacion.numero}}</label>
                             </label>
+                            <div class="item range range-positive border-range">
+                                {{data.ubicacion.numeroMinimo}}
+                                <input type="range" name="numero" ng-model="data.ubicacion.numero" min="{{data.ubicacion.numeroMinimo}}" max="{{data.ubicacion.numeroMaximo}}" ng-value="data.ubicacion.numero"> {{data.ubicacion.numeroMaximo}}
+                            </div>
 
                         </div>
                     </ion-item>
                 </div>
+
 
                 <br>
                 <div class="button-camera">
