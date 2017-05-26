@@ -1,6 +1,8 @@
 <ion-view view-title="Login" hide-nav-bar="true">
     <ion-header-bar align-title="center" class="bar bar-header background-color-primary">
+        <button class="button button-icon color-white icon ion-arrow-left-c" ng-click="volverAtras()"></button>
         <h1 class="title color-white font-primary">{{tipoGestion}}</h1>
+        <button class="button button-icon color-white icon ion-checkmark" ng-click="agregarIncidencia()"></button>
     </ion-header-bar>
 
     <ion-content>
@@ -23,35 +25,44 @@
             <div class="container tab-container">
                 <div class="padding5">
                     <label class="item item-input item-select">
-                        <div class="input-label font-size-small">
+                        <div class="input-label">
                             <span class="texto-negrita">Tipo Incidencia:</span>
                         </div><br>
-                        <select ng-model="data.tipoIncidencia" class="border-color-primary font-select">
+                        <select ng-model="incidencia.tipoIncidencia" class="border-color-primary font-select">
                             <option class="font-select-option" value="" selected>Incidencias...</option>
-                            <option class="font-select-option" value="1">Incidencia1</option>
-                            <option class="font-select-option" value="2">Incidencia2</option>
+                            <option class="font-select-option" ng-repeat="tipoI in tiposDeIncidencias" ng-value="tipoI.id">{{tipoI.nombre}}</option>
                         </select>
                     </label>
                 </div>
                 <div class="padding5">
                     <label class="item item-input item-select">
-                        <div class="input-label font-size-small">
-                            <span class="texto-negrita">Tipo Elemento:</span>
+                        <div class="input-label">
+                            <span class="texto-negrita">Tipo Servicios:</span>
                         </div><br>
-                        <select ng-model="data.tipoElemento" class="border-color-primary font-select" ng-change="elegirTipoElemento()">
-                            <option class="font-select-option" value="" selected>Elementos...</option>
-                            <!--<option class="font-select-option" value="1">Limpieza vertical</option>
-                            <option class="font-select-option" value="2">Papelera</option>
-                            <option class="font-select-option" value="3">Contenedor canino</option>
-                            <option class="font-select-option" value="4">Rejilla</option>-->
-                            <option class="font-select-option" ng-repeat="tipo in tiposDeElementos" value="{{tipo.id}}">{{tipo.nombre}}</option>
+                        <select ng-model="incidencia.tipoServicio" class="border-color-primary font-select" ng-change="elegirTipoServicio()">
+                            <option class="font-select-option" value="" selected>Servicios...</option>
+                            <option class="font-select-option" ng-repeat="tipoS in tiposDeServicios" ng-value="tipoS.id">
+                                {{tipoS.nombre}}</option>
                         </select>
                     </label>
                 </div>
                 <div class="padding5">
+                    <label class="item item-input item-toggle no-border no-padding">
+                        <div class="input-label">
+                            <span class="texto-negrita">Programación:</span>
+                        </div><br>
+                        <label class="toggle toggle-primary">
+                            <input type="checkbox" ng-model="incidencia.programacion">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </label>
+                </div>
+                <div class="padding5 move-up-10">
                     <label class="item item-input item-stacked-label ">
-                        <span class="input-label font-size-small texto-negrita">Describir Incidencia:</span>
-                        <textarea ng-model="data.descripcion " placeholder="Escriba aquí el motivo." 
+                        <span class="input-label texto-negrita">Describir Incidencia:</span>
+                        <textarea ng-model="incidencia.descripcion " placeholder="Escriba aquí el motivo." 
                             class="border-color-primary font-size-small"></textarea>
                     </label>
                 </div>
@@ -66,46 +77,33 @@
                     <!--ng-show="isUbicacionShown()"-->
                     <ion-item class="item-accordion accordion-body">
                         <div class="padding5">
-                            <label class="item item-input item-select" ng-show="isLimpiezaVertical()">
-                                <div class="input-label font-size-small text-padding5">
-                                    <span class="texto-negrita">Distrito:</span>
-                                </div>
-                                <select ng-model="data.ubicacion.distrito" class="border-color-primary font-select">
-                                    <option class="font-select-option" value="">Distritos...</option>
-                                    <option class="font-select-option" value="1">1</option>
-                                    <option class="font-select-option" value="2">2</option>
-                                </select>
-                            </label>
-                        </div>
-                        <div class="padding5">
                             <label class="item item-input item-select">
-                                <div class="input-label font-size-small text-padding5">
+                                <div class="input-label text-padding5">
                                     <span class="texto-negrita">Barrio:</span>
                                 </div>
-                                <select ng-model="data.ubicacion.barrio" class="border-color-primary font-select">
-                                    <option class="font-select-option" value="">Barrios...</option>
-                                    <option class="font-select-option" value="1">Barrio1</option>
-                                    <option class="font-select-option" value="2">Barrio2</option>
+                                <select ng-model="incidencia.ubicacion.barrio" class="border-color-primary font-select">
+                                    <option class="font-select-option" value="" selected>Barrios...</option>
+                                    <option class="font-select-option" ng-repeat="barrio in barrios" ng-value="barrio">
+                                        {{barrio}}</option>
                                 </select>
                             </label>
                         </div>
                         <div class="padding5">
                             <label class="item item-input item-select">
-                                <div class="input-label font-size-small text-padding5">
+                                <div class="input-label text-padding5">
                                     <span class="texto-negrita">Calle:</span>
                                 </div>
-                                <select ng-model="data.ubicacion.calle" class="border-color-primary font-select">
-                                    <option class="font-select-option" value="">Calles...</option>
-                                    <option class="font-select-option" value="1">Calle1</option>
-                                    <option class="font-select-option" value="2">Calle2</option>
+                                <select ng-model="incidencia.ubicacion.calle" class="border-color-primary font-select">
+                                    <option class="font-select-option" value="" selected>Calles...</option>
+                                    <option class="font-select-option" ng-repeat="calle in calles" ng-value="calle">
+                                        {{calle}}</option>
                                 </select>
                             </label>
                         </div>
-                        <div class="padding5">
+                        <!--<div class="padding5">
                             <label class="">
-                                <div class="input-label font-size-small text-padding5">
+                                <div class="input-label text-padding5">
                                     <span class="texto-negrita">Número:</span>
-                                    <!--{{data.ubicacion.numero}}-->
                                 </div>
                                 <label>{{data.ubicacion.numero}}</label>
                             </label>
@@ -113,7 +111,18 @@
                                 {{data.ubicacion.numeroMinimo}}
                                 <input type="range" name="numero" ng-model="data.ubicacion.numero" min="{{data.ubicacion.numeroMinimo}}" max="{{data.ubicacion.numeroMaximo}}" ng-value="data.ubicacion.numero"> {{data.ubicacion.numeroMaximo}}
                             </div>
-
+                        </div>-->
+                        <div class="padding5">
+                            <label class="item item-input item-select">
+                                <div class="input-label text-padding5">
+                                    <span class="texto-negrita">Número:</span>
+                                </div>
+                                <select ng-model="incidencia.ubicacion.numero" class="border-color-primary font-select">
+                                    <option class="font-select-option" value="" selected>Numeros...</option>
+                                    <option class="font-select-option" ng-repeat="numero in numeros" ng-value="numero">
+                                        {{numero}}</option>
+                                </select>
+                            </label>
                         </div>
                     </ion-item>
                 </div>
@@ -123,13 +132,13 @@
                 <div class="button-camera">
 
                     <div class="padding">
-                        <button class="button button-primary-small font-size-small" ng-click="nuevaFoto()" ng-disabled="!data.descripcion || !data.tipoIncidencia || !data.tipoElemento">
+                        <button class="button button-primary-small font-size-small" ng-click="nuevaFoto()" ng-disabled="noCumpleRequisitosMinimos()">
                             <i class="icon ion-camera icon-button-primary-center"></i>
                             <span>Nueva Foto</span>
                         </button>
                     </div>
                     <div class="padding">
-                        <button class="button button-primary-small font-size-small" ng-click="elegirFoto()" ng-disabled="!data.descripcion || !data.tipoIncidencia || !data.tipoElemento">
+                        <button class="button button-primary-small font-size-small" ng-click="elegirFoto()" ng-disabled="noCumpleRequisitosMinimos()">
                             <i class="icon ion-android-attach icon-button-primary-center"></i>
                             <span>Elegir foto</span>
                         </button>
@@ -141,19 +150,19 @@
 
     <div class="tabs tabs-icon-top" id="MenuInferior">
         <a class="tab-item {{informacionTab}} button-tab disabled" ng-click="mostrarPestania('informacion')">
-            <i class="dimaticon info icon"></i> Información
+            <i class="icon ion-information-circled"></i> Información
         </a>
         <a class="tab-item {{laborTab}} button-tab disabled" ng-click="mostrarPestania('labores')">
-            <i class="dimaticon list icon"></i> Labores
+            <i class="icon ion-clipboard"></i> Labores
         </a>
         <a class="tab-item {{rutaTab}} button-tab disabled" ng-click="mostrarPestania('ruta')">
-            <i class="dimaticon gps icon"></i> Ruta
+            <i class="icon ion-map"></i> Ruta
         </a>
         <a class="tab-item {{recursoTab}} button-tab disabled" ng-click="mostrarPestania('recursos')">
-            <i class="dimaticon tools icon"></i> Recursos
+            <i class="icon ion-settings"></i> Recursos
         </a>
         <a class="tab-item {{incidenciaTab}} button-tab" ng-click="mostrarPestania('incidencias')">
-            <i class="dimaticon warning icon"></i> Incidencias
+            <i class="icon ion-alert-circled"></i> Incidencias
         </a>
     </div>
 
